@@ -18,4 +18,5 @@ def getRandomName(length):
     return ''.join(random.choice(letters) for i in range(length))
 
 def pickRandomly(photos):
+    print(photos)
     return random.choice(photos)
