@@ -1,0 +1,1 @@
+python rain_bot.py > log
