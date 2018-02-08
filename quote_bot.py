@@ -12,7 +12,7 @@ def startJob():
         photos = getPhotos(PHOTO_FOLDER)
         selected_photo = pickRandomly(photos)
         FULL_LINK = getFullLink(selected_photo)
-        notifyChannel( { "text":FULL_LINK  , "channel": "#rain_notification" , "username": "Bang" } )
+        notifyChannel( { "text":FULL_LINK  , "channel": CHANNEL , "username": BOT_USERNAME } )
     except Exception , e:
         print("Something is wrong")
         print(e)
@@ -21,5 +21,3 @@ def notifyChannel(data):
     global WEBHOOK
     r = requests.post( WEBHOOK, json=data )
     print("#sent " , r.text)
-
-startJob()
