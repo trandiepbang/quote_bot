@@ -6,7 +6,7 @@ def getPhotos(mypath):
     return glob.glob(mypath + "/*.*")
 
 def getFullLink(photo):
-    return HOST + os.path.basename(photo)
+    return HOST + 'photo/'+ os.path.basename(photo)
 
 def pickRandomly(photos):
     return random.choice(photos)
