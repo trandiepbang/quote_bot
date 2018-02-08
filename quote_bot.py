@@ -18,6 +18,5 @@ def startJob():
         print(e)
 
 def notifyChannel(data):
-    global WEBHOOK
     r = requests.post( WEBHOOK, json=data )
     print("#sent " , r.text)
