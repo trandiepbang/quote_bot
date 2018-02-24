@@ -7,10 +7,7 @@ def getPhotos(mypath):
     return glob.glob(mypath + "/*.*")
 
 def getFullLink(photo):
-    folder = os.path.dirname(photo)
-    new_path = folder + '/' + getRandomName(20) + '.jpg'
-    path_local = os.rename(photo, new_path)
-    _link = HOST + 'photo/'+ os.path.basename(new_path)
+    _link = HOST + 'photo/'+ os.path.basename(photo) + '?v=' + getRandomName(5)
     return _link
 
 def getRandomName(length):
@@ -18,5 +15,4 @@ def getRandomName(length):
     return ''.join(random.choice(letters) for i in range(length))
 
 def pickRandomly(photos):
-    print(photos)
     return random.choice(photos)
