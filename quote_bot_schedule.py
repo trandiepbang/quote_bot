@@ -5,8 +5,10 @@ import os
 from quote_bot import startJob
 from config import *
 
-schedule.every(SENT_INTERVAL).minutes.do(startJob)
-# schedule.every().day.at("22:30").do(reset)
+if PRODUCT is False:
+    schedule.every(SENT_INTERVAL).minutes.do(startJob)
+else:
+    schedule.every().day.at(SENT_TIME).do(startJob)
 
 while True:
     schedule.run_pending()
